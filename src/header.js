@@ -19,6 +19,7 @@ class Header extends EthObject{
     'extraData',
     'mixHash',
     'nonce',
+    'baseFeePerGas',
   ]}
 
   constructor(raw = this.NULL){
@@ -46,7 +47,8 @@ class Header extends EthObject{
         toBuffer(rpcResult.timestamp),
         toBuffer(rpcResult.extraData),
         toBuffer(rpcResult.mixHash),
-        toBuffer(rpcResult.nonce)
+        toBuffer(rpcResult.nonce),
+        toBuffer(rpcResult.baseFeePerGas),
       ])
     }else{
       return new this()
